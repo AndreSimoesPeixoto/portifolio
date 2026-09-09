@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>André Simões Peixoto — Engenheiro de Software Full Stack</title>
+<meta name="description" content="André Simões Peixoto, engenheiro de software full stack: peça um orçamento para seu site ou sistema web." />
+<meta property="og:title" content="André Simões Peixoto — Engenheiro de Software Full Stack" />
+<meta property="og:description" content="Seu site ou sistema, do escopo ao ar. Peça um orçamento." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="#inicio" class="logo">André</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projetos">Trabalhos</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+    </ul>
+    <a href="#orcamento" class="nav-cta">Pedir orçamento</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projetos">Trabalhos</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#orcamento">Pedir orçamento</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO: H1 + oferta + H2 + CTA ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-inner" id="heroInner">
+      <p class="hero-eyebrow">André Simões Peixoto · Engenheiro de Software Full Stack</p>
+      <h1 class="hero-name hero-h1">Seu site ou sistema web, do escopo ao ar — com orçamento em 24h.</h1>
+      <p class="hero-tagline hero-h2">Desenvolvimento full stack sob medida (HTML, CSS, JavaScript e Node.js), com fluxo apoiado por IA para entregar mais rápido sem abrir mão de código revisado e organizado.</p>
+      <div class="hero-buttons">
+        <a href="#orcamento" class="btn-primary">Quero um orçamento</a>
+        <a href="#projetos" class="btn-secondary">Ver trabalhos</a>
+      </div>
+
+      <div class="ficha">
+        <div class="ficha-item">
+          <span class="ficha-label">Stack</span>
+          <span class="ficha-value">HTML · CSS · JavaScript · Node.js</span>
+        </div>
+        <div class="ficha-item">
+          <span class="ficha-label">Ambiente</span>
+          <span class="ficha-value">Claude Code · VS Code</span>
+        </div>
+        <div class="ficha-item">
+          <span class="ficha-label">Versionamento</span>
+          <span class="ficha-value">Git · GitHub</span>
+        </div>
+        <div class="ficha-item">
+          <span class="ficha-label">Atuação</span>
+          <span class="ficha-value">[cidade] · Remoto</span>
+        </div>
+      </div>
+    </div>
+    <a href="#orcamento" class="scroll-hint" aria-label="Rolar para o formulário">
+      <span>role para baixo</span>
+      <span class="line"></span>
+    </a>
+  </section>
+
+  <!-- ================= FORMULÁRIO (lead / BANT-lite) ================= -->
+  <section class="block reveal form-section" id="orcamento">
+    <div class="max-content">
+      <div class="form-grid">
+        <div class="form-intro">
+          <div class="rule"></div>
+          <h2 class="section-title">Conte o que precisa ser construído.</h2>
+          <p class="form-copy">Descreva o projeto em poucas linhas. Eu respondo com o que dá para fazer, prazo estimado e valor.</p>
+        </div>
+
+        <form id="leadForm" class="lead-form">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="field">
+            <label for="contatoInput">E-mail ou WhatsApp</label>
+            <input type="text" id="contatoInput" name="contato" required />
+          </div>
+          <div class="field">
+            <label for="tipoProjeto">Tipo de projeto</label>
+            <select id="tipoProjeto" name="tipoProjeto" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Site institucional ou landing page</option>
+              <option>Sistema web</option>
+              <option>Automação ou integração</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="orcamentoFaixa">Orçamento previsto</label>
+            <select id="orcamentoFaixa" name="orcamentoFaixa" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Até R$ 1.500</option>
+              <option>R$ 1.500 – R$ 5.000</option>
+              <option>R$ 5.000 – R$ 15.000</option>
+              <option>Acima de R$ 15.000</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="prazo">Prazo desejado</label>
+            <select id="prazo" name="prazo" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Urgente (até 2 semanas)</option>
+              <option>Até 1 mês</option>
+              <option>Sem prazo definido</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="decisor">Você é quem decide sobre esse projeto?</label>
+            <select id="decisor" name="decisor" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Sim, decido sozinho(a)</option>
+              <option>Decido em conjunto com outra pessoa</option>
+              <option>Não, só estou pesquisando por enquanto</option>
+            </select>
+          </div>
+          <div class="field field-full">
+            <label for="mensagem">Conte mais sobre o projeto</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary field-full">Enviar pelo WhatsApp</button>
+          <p class="form-note field-full">O botão abre o WhatsApp com a mensagem já escrita. Nada é enviado sem você confirmar.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEPOIMENTOS ================= -->
+  <section class="block reveal" id="depoimentos">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title">Depoimentos</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card placeholder-card">
+          <p>[Espaço reservado para o depoimento de um cliente ou colega de projeto.]</p>
+          <span class="testimonial-author">[Nome — cargo/empresa]</span>
+        </div>
+        <div class="testimonial-card placeholder-card">
+          <p>[Espaço reservado para o depoimento de um cliente ou colega de projeto.]</p>
+          <span class="testimonial-author">[Nome — cargo/empresa]</span>
+        </div>
+      </div>
+      <p class="section-note">Ainda sem depoimentos reais — os cards acima somem automaticamente assim que você preencher com os de verdade em <code>script.js</code>.</p>
+    </div>
+  </section>
+
+  <!-- ================= TRABALHOS / CASES ================= -->
+  <section class="block reveal" id="projetos">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title">Trabalhos</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-thumb"><span>imagem em breve</span></div>
+          <div class="project-body">
+            <h3>Portfólio pessoal</h3>
+            <p>Projeto de apresentação pessoal desenvolvido com foco em identidade visual, experiência e performance.</p>
+            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-thumb"><span>imagem em breve</span></div>
+          <div class="project-body">
+            <h3>Projeto Web</h3>
+            <p>Projeto digital desenvolvido para demonstrar interface, estrutura e experiência do usuário.</p>
+            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-thumb"><span>imagem em breve</span></div>
+          <div class="project-body">
+            <h3>Projeto em desenvolvimento</h3>
+            <p>Novo projeto em desenvolvimento.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="block reveal" id="sobre">
+    <div class="max-content">
+      <div class="about-grid">
+        <div>
+          <div class="rule"></div>
+          <h2 class="section-title">Sobre mim</h2>
+          <div class="about-text">
+            <p>Sou uma pessoa independente, comunicativa e com bastante interesse em tecnologia e criação de projetos.</p>
+            <p>Gosto de aprender coisas novas, organizar ideias e transformá-las em algo concreto — seja um projeto digital, uma peça de comunicação ou uma nova forma de resolver um problema.</p>
+            <p>[Edite este parágrafo com mais detalhes sobre sua trajetória, interesses e o que te move.]</p>
+          </div>
+        </div>
+        <div class="photo-placeholder">
+          <span>fotografia em breve</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STACK ================= -->
+  <section class="block reveal" id="stack">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title">Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-cat">
+          <h3>Linguagens</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Back-end</h3>
+          <ul>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Versionamento</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Ambiente</h3>
+          <ul>
+            <li>Claude Code</li>
+            <li>VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Comunicação</h3>
+          <ul>
+            <li>Atendimento</li>
+            <li>Comunicação com público</li>
+            <li>Vendas</li>
+            <li>Organização</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVIÇOS ================= -->
+  <section class="block reveal" id="servicos">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title">Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Sites e landing pages</h3>
+          <p>Páginas modernas, responsivas e rápidas, focadas em apresentar bem um produto, projeto ou perfil profissional.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sistemas web sob medida</h3>
+          <p>Aplicações full stack construídas do zero, com front-end e back-end ajustados à necessidade do projeto.</p>
+        </div>
+        <div class="service-card">
+          <h3>Fluxo com apoio de IA</h3>
+          <p>Desenvolvimento apoiado por Claude Code para acelerar entrega sem abrir mão de código organizado e revisado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRAJETÓRIA ================= -->
+  <section class="block reveal" id="trajetoria">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title">Minha trajetória</h2>
+      <ol class="timeline">
+        <li>
+          <span class="period">[ano]</span>
+          <h3>[Marco a preencher]</h3>
+          <p>[Descrição curta desse momento da sua trajetória.]</p>
+        </li>
+        <li>
+          <span class="period">[ano]</span>
+          <h3>[Marco a preencher]</h3>
+          <p>[Descrição curta desse momento da sua trajetória.]</p>
+        </li>
+        <li>
+          <span class="period">Hoje</span>
+          <h3>Construindo novos projetos</h3>
+          <p>Seguindo em frente com novos aprendizados, projetos e ideias.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= CONTATO / FOOTER ================= -->
+  <section class="block reveal" id="contato">
+    <div class="max-content">
+      <div class="rule"></div>
+      <h2 class="section-title contact-title">Prefere falar direto?</h2>
+      <p class="contact-copy">Sem formulário: fale comigo diretamente pelos canais abaixo.</p>
+
+      <p class="contact-empty">Adicione seus links de contato editando o array <code>socialLinks</code> no <code>script.js</code>.</p>
+      <div class="contact-links" id="contactLinks"></div>
+
+      <footer>
+        <div>
+          <p class="foot-name">André Simões Peixoto</p>
+          <p class="foot-tagline">Engenheiro de Software Full Stack · [cidade] · Remoto</p>
+        </div>
+        <p class="foot-copy" id="footCopy"></p>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

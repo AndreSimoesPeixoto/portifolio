@@ -537,6 +537,9 @@ section.block {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 859px) {
+  .about-photo { max-width: 82%; margin-inline: auto; }
+}
 .about-photo img {
   width: 100%;
   height: 100%;

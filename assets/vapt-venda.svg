@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 132" role="img" aria-label="Vapt Venda">
+  <title>Vapt Venda</title>
+  <g fill="none" stroke="#E2B87B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M74 66 L70 78" opacity="0.35" />
+    <path d="M92 60 L86 78" opacity="0.55" />
+    <path d="M104 46 L128 70 L182 16" />
+    <path d="M162 16 h20 v20" />
+  </g>
+  <text x="130" y="120" text-anchor="middle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.5" fill="#F4F1EB">Vapt Venda</text>
+</svg>

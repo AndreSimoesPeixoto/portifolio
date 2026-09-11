@@ -5,25 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>André Simões Peixoto — Engenheiro de Software Full Stack</title>
 <meta name="description" content="André Simões Peixoto, engenheiro de software full stack: peça um orçamento para seu site ou sistema web." />
+<meta name="theme-color" content="#0E0C0A" />
 <meta property="og:title" content="André Simões Peixoto — Engenheiro de Software Full Stack" />
 <meta property="og:description" content="Seu site ou sistema, do escopo ao ar. Peça um orçamento." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E0C0A'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='21' font-weight='700' fill='%23C89B5C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
 <header id="header">
   <nav>
-    <a href="#inicio" class="logo">André</a>
+    <a href="#inicio" class="logo">André<span aria-hidden="true">.</span></a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#stack">Stack</a></li>
       <li><a href="#projetos">Trabalhos</a></li>
+      <li><a href="#stack">Stack</a></li>
       <li><a href="#servicos">Serviços</a></li>
     </ul>
-    <a href="#orcamento" class="nav-cta">Pedir orçamento</a>
+    <a href="#contato" class="nav-cta">Vamos conversar</a>
     <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span>
     </button>
@@ -31,24 +35,25 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#stack">Stack</a></li>
       <li><a href="#projetos">Trabalhos</a></li>
+      <li><a href="#stack">Stack</a></li>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#orcamento">Pedir orçamento</a></li>
+      <li><a href="#contato">Vamos conversar</a></li>
     </ul>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 
   <!-- ================= HERO: H1 + oferta + H2 + CTA ================= -->
   <section class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-inner" id="heroInner">
-      <p class="hero-eyebrow">André Simões Peixoto · Engenheiro de Software Full Stack</p>
-      <h1 class="hero-name hero-h1">Seu site ou sistema web, do escopo ao ar — com orçamento em 24h.</h1>
-      <p class="hero-tagline hero-h2">Desenvolvimento full stack sob medida (HTML, CSS, JavaScript e Node.js), com fluxo apoiado por IA para entregar mais rápido sem abrir mão de código revisado e organizado.</p>
+      <p class="hero-eyebrow"><span class="hero-eyebrow-mark" aria-hidden="true"></span>André Simões Peixoto · Engenheiro de Software Full Stack</p>
+      <h1 class="hero-name hero-h1">Transformo ideias em produtos digitais com identidade, experiência e propósito.</h1>
+      <p class="hero-tagline hero-h2">Desenvolvimento web com atenção ao design e à experiência: pego uma ideia, entendo o que ela precisa comunicar e construo algo bonito, funcional e com personalidade — nunca um template genérico.</p>
       <div class="hero-buttons">
-        <a href="#orcamento" class="btn-primary">Quero um orçamento</a>
+        <a href="#contato" class="btn-primary">Vamos conversar</a>
         <a href="#projetos" class="btn-secondary">Ver trabalhos</a>
       </div>
 
@@ -67,14 +72,220 @@
         </div>
         <div class="ficha-item">
           <span class="ficha-label">Atuação</span>
-          <span class="ficha-value">[cidade] · Remoto</span>
+          <span class="ficha-value">Brasília — DF · Remoto</span>
         </div>
       </div>
     </div>
-    <a href="#orcamento" class="scroll-hint" aria-label="Rolar para o formulário">
+    <a href="#sobre" class="scroll-hint" aria-label="Rolar para baixo">
       <span>role para baixo</span>
       <span class="line"></span>
     </a>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="block reveal" id="sobre">
+    <div class="max-content">
+      <div class="about-grid">
+        <div>
+          <p class="section-eyebrow" aria-hidden="true"><span class="section-index">01</span> Perfil</p>
+          <h2 class="section-title">Sobre mim</h2>
+          <div class="about-text">
+            <p>Sou uma pessoa independente, comunicativa e com bastante interesse em tecnologia e criação de projetos.</p>
+            <p>Gosto de aprender coisas novas, organizar ideias e transformá-las em algo concreto — seja um projeto digital, uma peça de comunicação ou uma nova forma de resolver um problema.</p>
+            <p>No desenvolvimento web, o que me move é transformar uma ideia em um produto digital com identidade, experiência e propósito — entender o que ela precisa comunicar e construir a partir disso.</p>
+            <p>Cuido do design e da experiência de quem usa, construo cada projeto na prática e refino o processo a cada entrega. No fim, busco sempre um resultado com personalidade própria, não com a cara de um template genérico.</p>
+          </div>
+        </div>
+        <figure class="about-photo">
+          <img src="assets/perfil.jpg" alt="Retrato de André Simões Peixoto" width="864" height="1536" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRABALHOS / CASES ================= -->
+  <section class="block reveal" id="projetos">
+    <div class="max-content">
+      <p class="section-eyebrow" aria-hidden="true"><span class="section-index">02</span> Projetos</p>
+      <h2 class="section-title">Trabalhos</h2>
+      <div class="projects-grid" data-stagger>
+
+        <article class="project-card">
+          <a class="project-media" href="https://frozenlandia.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o site do projeto Frozenlândia">
+            <div class="project-visual project-visual--frozen" aria-hidden="true">
+              <img src="assets/frozenlandia.jpg" alt="" width="1254" height="1254" loading="lazy" decoding="async" />
+            </div>
+          </a>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <span class="project-category">Food &amp; Beverage</span>
+            </div>
+            <h3>Frozenlândia</h3>
+            <p>Uma experiência digital para uma marca de smoothies, com cardápio, produtos, preços e identidade visual própria.</p>
+            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="project-links">
+              <a class="project-link project-link--primary" href="https://frozenlandia.vercel.app/" target="_blank" rel="noopener noreferrer">Ver projeto <span aria-hidden="true">↗</span></a>
+              <a class="project-link" href="https://github.com/AndreSimoesPeixoto/Frozenlandia" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <a class="project-media" href="https://vapt-venda.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o site do projeto Vapt Venda">
+            <div class="project-visual project-visual--vapt" aria-hidden="true">
+              <svg class="vapt-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 132" role="img" aria-label="Vapt Venda">
+                <title>Vapt Venda</title>
+                <g fill="none" stroke="#E2B87B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M74 66 L70 78" opacity="0.35" />
+                  <path d="M92 60 L86 78" opacity="0.55" />
+                  <path d="M104 46 L128 70 L182 16" />
+                  <path d="M162 16 h20 v20" />
+                </g>
+                <text x="130" y="120" text-anchor="middle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.5" fill="#F4F1EB">Vapt Venda</text>
+              </svg>
+            </div>
+          </a>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <span class="project-category">Sales &amp; Management</span>
+            </div>
+            <h3>Vapt Venda</h3>
+            <p>Uma interface de vendas e gestão para pequenos negócios, com cadastro de produtos, vendas, pagamentos e acompanhamento financeiro.</p>
+            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="project-links">
+              <a class="project-link project-link--primary" href="https://vapt-venda.vercel.app/" target="_blank" rel="noopener noreferrer">Ver projeto <span aria-hidden="true">↗</span></a>
+              <a class="project-link" href="https://github.com/AndreSimoesPeixoto/VaptVenda" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-card--hertz">
+          <a class="project-media" href="https://hertz-omega.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o site do projeto HERTZ">
+            <div class="project-visual project-visual--hertz" aria-hidden="true">
+              <span class="hertz-haze"></span>
+              <span class="hertz-beam"></span>
+              <span class="hertz-rays"></span>
+              <span class="hertz-wordmark">HERTZ</span>
+              <span class="hertz-sub">Music &amp; Culture</span>
+              <span class="hertz-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+          </a>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-category">Music &amp; Culture Events</span>
+            </div>
+            <h3>HERTZ</h3>
+            <p>Uma experiência digital cinematográfica para eventos de música e cultura.</p>
+            <ul class="tech-tags"><li>Next.js</li><li>React</li><li>TypeScript</li><li>CSS</li></ul>
+            <div class="project-links">
+              <a class="project-link project-link--primary" href="https://hertz-omega.vercel.app/" target="_blank" rel="noopener noreferrer">Ver projeto <span aria-hidden="true">↗</span></a>
+              <a class="project-link" href="https://github.com/AndreSimoesPeixoto/hertz" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STACK ================= -->
+  <section class="block reveal" id="stack">
+    <div class="max-content">
+      <p class="section-eyebrow" aria-hidden="true"><span class="section-index">03</span> Ferramentas</p>
+      <h2 class="section-title">Stack</h2>
+      <div class="skills-grid" data-stagger>
+        <div class="skill-cat">
+          <h3>Linguagens</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Back-end</h3>
+          <ul>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Versionamento</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Ambiente</h3>
+          <ul>
+            <li>Claude Code</li>
+            <li>VS Code</li>
+          </ul>
+        </div>
+        <div class="skill-cat">
+          <h3>Comunicação</h3>
+          <ul>
+            <li>Atendimento</li>
+            <li>Comunicação com público</li>
+            <li>Vendas</li>
+            <li>Organização</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVIÇOS ================= -->
+  <section class="block reveal" id="servicos">
+    <div class="max-content">
+      <p class="section-eyebrow" aria-hidden="true"><span class="section-index">04</span> Atuação</p>
+      <h2 class="section-title">Serviços</h2>
+      <div class="services-grid" data-stagger>
+        <div class="service-card">
+          <span class="service-index" aria-hidden="true">01</span>
+          <h3>Sites e landing pages</h3>
+          <p>Páginas modernas, rápidas e responsivas, pensadas para comunicar bem uma ideia, um produto ou um perfil — com identidade visual própria.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-index" aria-hidden="true">02</span>
+          <h3>Sistemas web sob medida</h3>
+          <p>Aplicações full stack construídas do zero, com front-end e back-end ajustados à necessidade do projeto.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-index" aria-hidden="true">03</span>
+          <h3>Fluxo com apoio de IA</h3>
+          <p>Desenvolvimento apoiado por Claude Code para acelerar entrega sem abrir mão de código organizado e revisado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRAJETÓRIA ================= -->
+  <section class="block reveal" id="trajetoria">
+    <div class="max-content">
+      <p class="section-eyebrow" aria-hidden="true"><span class="section-index">05</span> Percurso</p>
+      <h2 class="section-title">Minha trajetória</h2>
+      <ol class="timeline">
+        <li>
+          <span class="period">2023</span>
+          <h3>O ponto de partida</h3>
+          <p>Comecei minha trajetória com tecnologia e desenvolvimento estudando por conta própria e experimentando na prática — criando meus primeiros projetos para entender como uma ideia vira interface, código e produto.</p>
+        </li>
+        <li>
+          <span class="period">Desde 2023</span>
+          <h3>Construindo projetos reais</h3>
+          <p>Passei a desenvolver projetos de verdade, explorando a construção de interfaces, sites e experiências digitais. Cada projeto virou uma forma de ampliar repertório técnico e apurar o olhar para design.</p>
+        </li>
+        <li>
+          <span class="period">Hoje</span>
+          <h3>Processo moderno, apoiado por IA</h3>
+          <p>Hoje uso ferramentas modernas de desenvolvimento e inteligência artificial como parte do meu processo de criação — para construir mais rápido, sem abrir mão de código organizado e de um resultado com identidade.</p>
+        </li>
+      </ol>
+    </div>
   </section>
 
   <!-- ================= FORMULÁRIO (lead / BANT-lite) ================= -->
@@ -82,9 +293,14 @@
     <div class="max-content">
       <div class="form-grid">
         <div class="form-intro">
-          <div class="rule"></div>
+          <p class="section-eyebrow" aria-hidden="true"><span class="section-index">06</span> Orçamento</p>
           <h2 class="section-title">Conte o que precisa ser construído.</h2>
           <p class="form-copy">Descreva o projeto em poucas linhas. Eu respondo com o que dá para fazer, prazo estimado e valor.</p>
+          <ul class="form-points">
+            <li>Resposta com escopo, prazo e valor</li>
+            <li>Sem compromisso — o WhatsApp só abre com a mensagem pronta</li>
+            <li>Retorno em até 24h</li>
+          </ul>
         </div>
 
         <form id="leadForm" class="lead-form">
@@ -147,186 +363,23 @@
     </div>
   </section>
 
-  <!-- ================= DEPOIMENTOS ================= -->
-  <section class="block reveal" id="depoimentos">
-    <div class="max-content">
-      <div class="rule"></div>
-      <h2 class="section-title">Depoimentos</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card placeholder-card">
-          <p>[Espaço reservado para o depoimento de um cliente ou colega de projeto.]</p>
-          <span class="testimonial-author">[Nome — cargo/empresa]</span>
-        </div>
-        <div class="testimonial-card placeholder-card">
-          <p>[Espaço reservado para o depoimento de um cliente ou colega de projeto.]</p>
-          <span class="testimonial-author">[Nome — cargo/empresa]</span>
-        </div>
-      </div>
-      <p class="section-note">Ainda sem depoimentos reais — os cards acima somem automaticamente assim que você preencher com os de verdade em <code>script.js</code>.</p>
-    </div>
-  </section>
-
-  <!-- ================= TRABALHOS / CASES ================= -->
-  <section class="block reveal" id="projetos">
-    <div class="max-content">
-      <div class="rule"></div>
-      <h2 class="section-title">Trabalhos</h2>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-thumb"><span>imagem em breve</span></div>
-          <div class="project-body">
-            <h3>Portfólio pessoal</h3>
-            <p>Projeto de apresentação pessoal desenvolvido com foco em identidade visual, experiência e performance.</p>
-            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-thumb"><span>imagem em breve</span></div>
-          <div class="project-body">
-            <h3>Projeto Web</h3>
-            <p>Projeto digital desenvolvido para demonstrar interface, estrutura e experiência do usuário.</p>
-            <ul class="tech-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-thumb"><span>imagem em breve</span></div>
-          <div class="project-body">
-            <h3>Projeto em desenvolvimento</h3>
-            <p>Novo projeto em desenvolvimento.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SOBRE ================= -->
-  <section class="block reveal" id="sobre">
-    <div class="max-content">
-      <div class="about-grid">
-        <div>
-          <div class="rule"></div>
-          <h2 class="section-title">Sobre mim</h2>
-          <div class="about-text">
-            <p>Sou uma pessoa independente, comunicativa e com bastante interesse em tecnologia e criação de projetos.</p>
-            <p>Gosto de aprender coisas novas, organizar ideias e transformá-las em algo concreto — seja um projeto digital, uma peça de comunicação ou uma nova forma de resolver um problema.</p>
-            <p>[Edite este parágrafo com mais detalhes sobre sua trajetória, interesses e o que te move.]</p>
-          </div>
-        </div>
-        <div class="photo-placeholder">
-          <span>fotografia em breve</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= STACK ================= -->
-  <section class="block reveal" id="stack">
-    <div class="max-content">
-      <div class="rule"></div>
-      <h2 class="section-title">Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-cat">
-          <h3>Linguagens</h3>
-          <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <h3>Back-end</h3>
-          <ul>
-            <li>Node.js</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <h3>Versionamento</h3>
-          <ul>
-            <li>Git</li>
-            <li>GitHub</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <h3>Ambiente</h3>
-          <ul>
-            <li>Claude Code</li>
-            <li>VS Code</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <h3>Comunicação</h3>
-          <ul>
-            <li>Atendimento</li>
-            <li>Comunicação com público</li>
-            <li>Vendas</li>
-            <li>Organização</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SERVIÇOS ================= -->
-  <section class="block reveal" id="servicos">
-    <div class="max-content">
-      <div class="rule"></div>
-      <h2 class="section-title">Serviços</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Sites e landing pages</h3>
-          <p>Páginas modernas, responsivas e rápidas, focadas em apresentar bem um produto, projeto ou perfil profissional.</p>
-        </div>
-        <div class="service-card">
-          <h3>Sistemas web sob medida</h3>
-          <p>Aplicações full stack construídas do zero, com front-end e back-end ajustados à necessidade do projeto.</p>
-        </div>
-        <div class="service-card">
-          <h3>Fluxo com apoio de IA</h3>
-          <p>Desenvolvimento apoiado por Claude Code para acelerar entrega sem abrir mão de código organizado e revisado.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= TRAJETÓRIA ================= -->
-  <section class="block reveal" id="trajetoria">
-    <div class="max-content">
-      <div class="rule"></div>
-      <h2 class="section-title">Minha trajetória</h2>
-      <ol class="timeline">
-        <li>
-          <span class="period">[ano]</span>
-          <h3>[Marco a preencher]</h3>
-          <p>[Descrição curta desse momento da sua trajetória.]</p>
-        </li>
-        <li>
-          <span class="period">[ano]</span>
-          <h3>[Marco a preencher]</h3>
-          <p>[Descrição curta desse momento da sua trajetória.]</p>
-        </li>
-        <li>
-          <span class="period">Hoje</span>
-          <h3>Construindo novos projetos</h3>
-          <p>Seguindo em frente com novos aprendizados, projetos e ideias.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <!-- ================= CONTATO / FOOTER ================= -->
   <section class="block reveal" id="contato">
     <div class="max-content">
-      <div class="rule"></div>
+      <p class="section-eyebrow" aria-hidden="true"><span class="section-index">07</span> Contato</p>
       <h2 class="section-title contact-title">Prefere falar direto?</h2>
-      <p class="contact-copy">Sem formulário: fale comigo diretamente pelos canais abaixo.</p>
+      <p class="contact-copy">Sem formulário: me chama por um dos canais abaixo e a gente conversa sobre a sua ideia.</p>
 
-      <p class="contact-empty">Adicione seus links de contato editando o array <code>socialLinks</code> no <code>script.js</code>.</p>
-      <div class="contact-links" id="contactLinks"></div>
+      <div class="contact-links">
+        <a href="https://wa.me/5561999556715" target="_blank" rel="noopener noreferrer">WhatsApp · +55 61 99955-6715</a>
+        <a href="mailto:andresimoes2002@gmail.com">E-mail · andresimoes2002@gmail.com</a>
+        <a href="https://github.com/AndreSimoesPeixoto" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
 
       <footer>
         <div>
           <p class="foot-name">André Simões Peixoto</p>
-          <p class="foot-tagline">Engenheiro de Software Full Stack · [cidade] · Remoto</p>
+          <p class="foot-tagline">Engenheiro de Software Full Stack · Brasília — DF · Remoto</p>
         </div>
         <p class="foot-copy" id="footCopy"></p>
       </footer>

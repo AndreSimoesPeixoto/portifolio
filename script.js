@@ -1,13 +1,15 @@
 // ============================================================
-// Preencha seus links de contato aqui. Um botão só aparece
-// se o "href" não estiver vazio.
+// Canais de contato reais. O formulário de orçamento usa o
+// WhatsApp abaixo para montar a mensagem.
 // ============================================================
 const socialLinks = [
-  { label: 'WhatsApp', href: '' },   // ex: 'https://wa.me/55XXXXXXXXXXX'
-  { label: 'E-mail', href: '' },     // ex: 'mailto:seuemail@exemplo.com'
-  { label: 'GitHub', href: '' },     // ex: 'https://github.com/seu-usuario'
-  { label: 'Instagram', href: '' },  // ex: 'https://instagram.com/seu-usuario'
+  { label: 'WhatsApp', href: 'https://wa.me/5561999556715' },
+  { label: 'E-mail', href: 'mailto:andresimoes2002@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/AndreSimoesPeixoto' },
 ]
+
+// Marca que o JS está ativo (as animações de entrada só valem com .js)
+document.documentElement.classList.add('js')
 
 // Formulário de orçamento: monta a mensagem e abre o WhatsApp
 const leadForm = document.getElementById('leadForm')
@@ -50,11 +52,13 @@ const mobileMenu = document.getElementById('mobileMenu')
 hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.toggle('open')
   hamburger.setAttribute('aria-expanded', String(isOpen))
+  hamburger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu')
 })
 mobileMenu.querySelectorAll('a').forEach((a) =>
   a.addEventListener('click', () => {
     mobileMenu.classList.remove('open')
     hamburger.setAttribute('aria-expanded', 'false')
+    hamburger.setAttribute('aria-label', 'Abrir menu')
   }),
 )
 
@@ -67,33 +71,44 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Reveal ao rolar
 const revealEls = document.querySelectorAll('.reveal')
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible')
-        observer.unobserve(entry.target)
-      }
-    })
-  },
-  { threshold: 0.15 },
-)
-revealEls.forEach((el) => observer.observe(el))
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0, rootMargin: '0px 0px -12% 0px' },
+  )
+  revealEls.forEach((el) => observer.observe(el))
+} else {
+  revealEls.forEach((el) => el.classList.add('visible'))
+}
 
-// Links de contato (renderizados a partir do array acima)
-const contactLinksEl = document.getElementById('contactLinks')
-const activeLinks = socialLinks.filter((l) => l.href)
-activeLinks.forEach((link) => {
-  const a = document.createElement('a')
-  a.href = link.href
-  a.textContent = link.label
-  if (link.label !== 'E-mail') {
-    a.target = '_blank'
-    a.rel = 'noreferrer'
-  }
-  contactLinksEl.appendChild(a)
-})
-document.querySelector('.contact-empty').style.display = activeLinks.length ? 'none' : 'block'
+// Navegação: destaque da seção visível
+const navLinks = Array.from(document.querySelectorAll('.nav-links a'))
+const sections = navLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean)
+
+if ('IntersectionObserver' in window && sections.length) {
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        const id = entry.target.id
+        navLinks.forEach((link) =>
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`),
+        )
+      })
+    },
+    { rootMargin: '-45% 0px -50% 0px' },
+  )
+  sections.forEach((section) => spy.observe(section))
+}
 
 // Rodapé: ano atual
 document.getElementById('footCopy').textContent =

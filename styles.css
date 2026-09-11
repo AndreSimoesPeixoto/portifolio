@@ -22,7 +22,7 @@
   --step-2: clamp(1.9rem, 1.4rem + 2.2vw, 2.75rem);
   --step-3: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
 
-  --space-section: clamp(5.5rem, 4rem + 7vw, 9.5rem);
+  --space-section: clamp(6.5rem, 4.5rem + 8vw, 11.5rem);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -441,6 +441,7 @@ section.block {
 
 /* alternância tonal sutil entre seções */
 #projetos,
+#processo,
 #servicos,
 #orcamento { background: var(--ink-soft); }
 
@@ -472,7 +473,7 @@ section.block {
   font-size: var(--step-2);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4.25rem;
   max-width: 20ch;
 }
 
@@ -495,17 +496,20 @@ section.block {
 .reveal.visible [data-stagger] > *:nth-child(3) { transition-delay: 0.22s; }
 .reveal.visible [data-stagger] > *:nth-child(4) { transition-delay: 0.30s; }
 .reveal.visible [data-stagger] > *:nth-child(5) { transition-delay: 0.38s; }
+.reveal.visible [data-stagger] > *:nth-child(6) { transition-delay: 0.46s; }
+.reveal.visible [data-stagger] > *:nth-child(7) { transition-delay: 0.54s; }
+.reveal.visible [data-stagger] > *:nth-child(8) { transition-delay: 0.62s; }
 
 /* ============================================================
    Sobre
    ============================================================ */
 .about-grid {
   display: grid;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: start;
 }
 @media (min-width: 860px) {
-  .about-grid { grid-template-columns: 1.15fr 0.85fr; gap: 5rem; }
+  .about-grid { grid-template-columns: 1.15fr 0.85fr; gap: 6rem; }
 }
 
 .about-text p {
@@ -556,7 +560,7 @@ section.block {
    ============================================================ */
 .projects-grid {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 680px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -749,7 +753,7 @@ section.block {
 }
 
 .project-body {
-  padding: 1.75rem;
+  padding: 2.15rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -837,7 +841,7 @@ section.block {
    ============================================================ */
 .skills-grid {
   display: grid;
-  gap: 2.5rem 3rem;
+  gap: 3rem 3.5rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 640px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
@@ -867,7 +871,7 @@ section.block {
    ============================================================ */
 .services-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.85rem;
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -875,11 +879,12 @@ section.block {
 .service-card {
   border: 1px solid var(--border);
   border-radius: 3px;
-  padding: 2rem 1.85rem;
+  padding: 2.5rem 2.15rem;
   background: var(--ink);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), background-color 0.3s var(--ease);
+  box-shadow: 0 18px 40px -30px rgba(0, 0, 0, 0.65);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 .service-card::before {
   content: '';
@@ -897,6 +902,7 @@ section.block {
   border-color: rgba(200, 155, 92, 0.45);
   transform: translateY(-4px);
   background: var(--ink-raise);
+  box-shadow: 0 26px 54px -28px rgba(0, 0, 0, 0.8);
 }
 .service-card:hover::before { transform: scaleY(1); }
 .service-index {
@@ -907,6 +913,200 @@ section.block {
 }
 .service-card h3 { font-size: 1.2rem; margin: 0.8rem 0 0.7rem; letter-spacing: -0.01em; }
 .service-card p { color: var(--paper-dim); font-size: 0.9rem; line-height: 1.7; margin: 0; }
+
+/* ============================================================
+   Como eu trabalho — timeline vertical interativa
+   ============================================================ */
+.process-intro {
+  color: var(--paper-dim);
+  font-size: clamp(1.02rem, 0.96rem + 0.35vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 46ch;
+  margin: -2.5rem 0 4rem;
+}
+
+.process-track {
+  position: relative;
+}
+
+.process-line {
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.6rem;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.process-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--brass-lit), var(--brass));
+  border-radius: 2px;
+  box-shadow: 0 0 14px rgba(226, 184, 123, 0.45);
+  transition: height 0.15s linear;
+  will-change: height;
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.process-step {
+  position: relative;
+  display: flex;
+  gap: 1.75rem;
+  padding-bottom: clamp(3rem, 2.2rem + 3vw, 5.5rem);
+}
+.process-step:last-child { padding-bottom: 0; }
+
+.process-content { min-width: 0; }
+
+.process-dot {
+  flex: none;
+  position: relative;
+  z-index: 1;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2rem;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 1.5px solid var(--border);
+  transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.process-content h3,
+.process-content p,
+.process-num {
+  transition: color 0.4s var(--ease), opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.process-num {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--paper-mute);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.04em;
+}
+.process-content h3 {
+  font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  letter-spacing: -0.01em;
+  color: var(--paper-dim);
+  margin-bottom: 0.6rem;
+}
+.process-content p {
+  color: var(--paper-mute);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 42ch;
+  margin: 0;
+}
+
+/* etapa concluída: linha e ponto já percorridos pelo scroll */
+.process-step.is-done .process-dot {
+  background: var(--brass);
+  border-color: var(--brass);
+}
+.process-step.is-done .process-num { color: var(--brass-soft); }
+.process-step.is-done .process-content h3 { color: var(--paper); }
+
+/* etapa ativa: destaque total, acompanhando a leitura */
+.process-step.is-active .process-dot {
+  background: var(--brass-lit);
+  border-color: var(--brass-lit);
+  box-shadow: 0 0 0 5px rgba(226, 184, 123, 0.16);
+  transform: scale(1.15);
+}
+.process-step.is-active .process-num {
+  color: var(--brass-lit);
+  transform: translateX(0.2rem);
+}
+.process-step.is-active .process-content h3 {
+  color: var(--paper);
+  transform: translateX(0.2rem);
+}
+.process-step.is-active .process-content p {
+  color: var(--paper-dim);
+  transform: translateX(0.2rem);
+}
+
+.process-step:hover .process-dot { border-color: var(--brass-lit); }
+
+@media (min-width: 640px) {
+  .process-step { gap: 2.25rem; }
+  .process-content p { font-size: 1rem; }
+}
+
+/* ============================================================
+   Ferramentas — chips
+   ============================================================ */
+.tools-intro {
+  color: var(--paper-dim);
+  font-size: clamp(1.02rem, 0.96rem + 0.35vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 46ch;
+  margin: -2.5rem 0 3rem;
+}
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.15rem 0.7rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--ink-soft);
+  color: var(--paper-dim);
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease),
+    transform 0.3s var(--ease), background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.tool-chip:hover {
+  border-color: rgba(200, 155, 92, 0.55);
+  color: var(--paper);
+  background: var(--ink-raise);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -18px rgba(200, 155, 92, 0.4);
+}
+.tool-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink-raise);
+  border: 1px solid var(--border-dim);
+  color: var(--brass-lit);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.tool-chip:hover .tool-icon {
+  border-color: var(--brass-soft);
+  background: var(--ink);
+}
 
 /* ============================================================
    Trajetória

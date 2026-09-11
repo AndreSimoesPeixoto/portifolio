@@ -110,6 +110,51 @@ if ('IntersectionObserver' in window && sections.length) {
   sections.forEach((section) => spy.observe(section))
 }
 
+// "Como eu trabalho": timeline vertical acompanha o scroll
+const processTrack = document.getElementById('processTrack')
+const processLineFill = document.getElementById('processLineFill')
+const processSteps = processTrack
+  ? Array.from(processTrack.querySelectorAll('.process-step'))
+  : []
+
+if (processTrack && processLineFill && processSteps.length) {
+  const triggerRatio = 0.42 // linha de leitura: ~42% da altura da tela
+  let ticking = false
+
+  const updateProcess = () => {
+    ticking = false
+    const triggerY = window.innerHeight * triggerRatio
+
+    let activeIndex = -1
+    processSteps.forEach((step, i) => {
+      const rect = step.getBoundingClientRect()
+      if (rect.top <= triggerY) activeIndex = i
+    })
+
+    processSteps.forEach((step, i) => {
+      step.classList.toggle('is-active', i === activeIndex)
+      step.classList.toggle('is-done', i < activeIndex)
+    })
+
+    const trackRect = processTrack.getBoundingClientRect()
+    const trackHeight = processTrack.offsetHeight || 1
+    let progress = (triggerY - trackRect.top) / trackHeight
+    progress = Math.min(1, Math.max(0, progress))
+    processLineFill.style.height = (progress * 100) + '%'
+  }
+
+  const requestProcessUpdate = () => {
+    if (!ticking) {
+      ticking = true
+      requestAnimationFrame(updateProcess)
+    }
+  }
+
+  requestProcessUpdate()
+  window.addEventListener('scroll', requestProcessUpdate, { passive: true })
+  window.addEventListener('resize', requestProcessUpdate)
+}
+
 // Rodapé: ano atual
 document.getElementById('footCopy').textContent =
   '© ' + new Date().getFullYear() + ' André Simões Peixoto'
